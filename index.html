@@ -1,89 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Profile</title>
+<meta charset="UTF-8">
+<title>Duck Profile</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: purple;
-            overflow: hidden;
-        }
+<style>
+body {
+    margin: 0;
+    background: black;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    color: white;
+}
 
-        .card {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            padding: 40px;
-            border: 2px solid purple;
-            border-radius: 20px;
-            box-shadow: 0 0 20px purple;
-        }
+/* glowing background effect */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(128,0,255,0.2), transparent);
+    animation: pulse 4s infinite alternate;
+}
 
-        h1 {
-            margin-bottom: 15px;
-        }
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
 
-        .highlight {
-            font-weight: bold;
-            color: #b56bff;
-        }
+/* center card */
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 40px;
+    border: 2px solid #a855f7;
+    border-radius: 20px;
+    box-shadow: 0 0 25px #a855f7;
+    background: rgba(20, 0, 40, 0.6);
+    backdrop-filter: blur(8px);
+}
 
-        /* Duck images */
-        .duck {
-            width: 90px;
-            height: 90px;
-            position: absolute;
-            border-radius: 10px;
-            border: 2px solid purple;
-        }
+h1 {
+    color: #c084fc;
+    margin-bottom: 20px;
+}
 
-        .top-left {
-            top: 10px;
-            left: 10px;
-        }
+.highlight {
+    color: #a855f7;
+    font-weight: bold;
+}
 
-        .top-right {
-            top: 10px;
-            right: 10px;
-        }
+/* ducks */
+.duck {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    border-radius: 15px;
+    border: 2px solid #a855f7;
+    box-shadow: 0 0 15px #a855f7;
+}
 
-        .bottom-left {
-            bottom: 10px;
-            left: 10px;
-        }
+/* corners */
+.tl { top: 10px; left: 10px; }
+.tr { top: 10px; right: 10px; }
+.bl { bottom: 10px; left: 10px; }
+.br { bottom: 10px; right: 10px; }
 
-        .bottom-right {
-            bottom: 10px;
-            right: 10px;
-        }
-    </style>
+/* floating animation */
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- Ducks in corners -->
-    <img class="duck top-left" src="https://placekitten.com/100/100" alt="duck">
-    <img class="duck top-right" src="https://placekitten.com/101/100" alt="duck">
-    <img class="duck bottom-left" src="https://placekitten.com/102/100" alt="duck">
-    <img class="duck bottom-right" src="https://placekitten.com/103/100" alt="duck">
+<!-- ducks -->
+<img class="duck tl float" src="https://placekitten.com/100/100">
+<img class="duck tr float" src="https://placekitten.com/101/100">
+<img class="duck bl float" src="https://placekitten.com/102/100">
+<img class="duck br float" src="https://placekitten.com/103/100">
 
-    <!-- Main card -->
-    <div class="card">
-        <h1>My Online Profile</h1>
+<!-- main content -->
+<div class="card">
+    <h1>🐤 My Duck Profile</h1>
 
-        <p>Discord Username: <span class="highlight">duckbot_</span></p>
-        <p>Roblox Username: <span class="highlight">jeef87604</span></p>
+    <p>Discord: <span class="highlight">duckbot_</span></p>
+    <p>Roblox: <span class="highlight">jeef87604</span></p>
 
-        <p style="margin-top: 20px; font-size: 12px; opacity: 0.7;">
-            Built while learning HTML & CSS
-        </p>
-    </div>
+    <p style="margin-top:20px; opacity:0.6; font-size:12px;">
+        Built while learning HTML + CSS
+    </p>
+</div>
 
 </body>
 </html>
