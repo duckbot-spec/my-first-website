@@ -1,67 +1,89 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>My Profile</title>
 
-```
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #0f172a, #1e293b);
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        text-align: center;
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: purple;
+            overflow: hidden;
+        }
 
-    .card {
-        background: rgba(255, 255, 255, 0.05);
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        backdrop-filter: blur(10px);
-        max-width: 400px;
-    }
+        .card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding: 40px;
+            border: 2px solid purple;
+            border-radius: 20px;
+            box-shadow: 0 0 20px purple;
+        }
 
-    h1 {
-        margin-bottom: 10px;
-        font-size: 28px;
-    }
+        h1 {
+            margin-bottom: 15px;
+        }
 
-    p {
-        font-size: 16px;
-        margin: 8px 0;
-        opacity: 0.9;
-    }
+        .highlight {
+            font-weight: bold;
+            color: #b56bff;
+        }
 
-    .highlight {
-        color: #38bdf8;
-        font-weight: bold;
-    }
-</style>
-```
+        /* Duck images */
+        .duck {
+            width: 90px;
+            height: 90px;
+            position: absolute;
+            border-radius: 10px;
+            border: 2px solid purple;
+        }
 
+        .top-left {
+            top: 10px;
+            left: 10px;
+        }
+
+        .top-right {
+            top: 10px;
+            right: 10px;
+        }
+
+        .bottom-left {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .bottom-right {
+            bottom: 10px;
+            right: 10px;
+        }
+    </style>
 </head>
 
 <body>
 
-```
-<div class="card">
-    <h1>My Online Profile</h1>
+    <!-- Ducks in corners -->
+    <img class="duck top-left" src="https://placekitten.com/100/100" alt="duck">
+    <img class="duck top-right" src="https://placekitten.com/101/100" alt="duck">
+    <img class="duck bottom-left" src="https://placekitten.com/102/100" alt="duck">
+    <img class="duck bottom-right" src="https://placekitten.com/103/100" alt="duck">
 
-    <p>Discord Username: <span class="highlight">duckbot_</span></p>
-    <p>Roblox Username: <span class="highlight">jeef87604</span></p>
+    <!-- Main card -->
+    <div class="card">
+        <h1>My Online Profile</h1>
 
-    <p style="margin-top: 20px; font-size: 12px; opacity: 0.6;">
-        Built while learning HTML & CSS
-    </p>
-</div>
-```
+        <p>Discord Username: <span class="highlight">duckbot_</span></p>
+        <p>Roblox Username: <span class="highlight">jeef87604</span></p>
+
+        <p style="margin-top: 20px; font-size: 12px; opacity: 0.7;">
+            Built while learning HTML & CSS
+        </p>
+    </div>
 
 </body>
 </html>
